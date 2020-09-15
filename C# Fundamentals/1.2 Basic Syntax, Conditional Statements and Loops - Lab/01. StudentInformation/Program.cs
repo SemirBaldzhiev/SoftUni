@@ -10,7 +10,7 @@ namespace _01._StudentInformation
             int age = int.Parse(Console.ReadLine());
             double grade = double.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Name: {name}, Age: {age}, Grade: {grade}");
+            Console.WriteLine($"Name: {name}, Age: {age}, Grade: {grade:f2}");
             
         }
     }

@@ -9,7 +9,7 @@ namespace _01._Ages
             int age = int.Parse(Console.ReadLine());
             string output = "";
 
-            if (age > 0 && age <= 2)
+            if (age >= 0 && age <= 2)
             {
                 output = "baby";
             }
