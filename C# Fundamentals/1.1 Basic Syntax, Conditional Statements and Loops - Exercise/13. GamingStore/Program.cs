@@ -16,6 +16,12 @@ namespace _13._GamingStore
             {
                 string game = Console.ReadLine();
 
+                if (game == "Game Time")
+                {
+                    Console.WriteLine($"Total spent: ${totalSpent:f2}. Remaining: ${balance:f2}");
+                    break;
+                }
+
                 switch (game)
                 {
                     case "OutFall 4": price = 39.99; break;
@@ -27,11 +33,6 @@ namespace _13._GamingStore
                     default: Console.WriteLine("Not Found"); break;
                 }
 
-                if (game == "Game Time")
-                {
-                    Console.WriteLine($"Total spent: ${totalSpent:f2}. Remaining: ${balance:f2}");
-                    break;
-                }
 
                 if (price > balance)
                 {

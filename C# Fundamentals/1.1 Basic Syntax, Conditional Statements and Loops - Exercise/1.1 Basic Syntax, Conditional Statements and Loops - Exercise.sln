@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. EnglishNameOfTheLastDig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13. GamingStore", "13. GamingStore\13. GamingStore.csproj", "{735EE511-7C0A-4A3A-B029-D170B57A2DEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14. ReverseString", "14. ReverseString\14. ReverseString.csproj", "{305E1E7F-8068-487D-8DB1-552506ED7CE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15. Messages", "15. Messages\15. Messages.csproj", "{D6AF1C53-A37E-493C-A8E0-5F2CD9FA226A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{735EE511-7C0A-4A3A-B029-D170B57A2DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{735EE511-7C0A-4A3A-B029-D170B57A2DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{735EE511-7C0A-4A3A-B029-D170B57A2DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{305E1E7F-8068-487D-8DB1-552506ED7CE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305E1E7F-8068-487D-8DB1-552506ED7CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305E1E7F-8068-487D-8DB1-552506ED7CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305E1E7F-8068-487D-8DB1-552506ED7CE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6AF1C53-A37E-493C-A8E0-5F2CD9FA226A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6AF1C53-A37E-493C-A8E0-5F2CD9FA226A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6AF1C53-A37E-493C-A8E0-5F2CD9FA226A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6AF1C53-A37E-493C-A8E0-5F2CD9FA226A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
