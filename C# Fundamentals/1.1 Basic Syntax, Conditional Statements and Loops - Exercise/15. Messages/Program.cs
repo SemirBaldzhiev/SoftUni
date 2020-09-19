@@ -29,11 +29,8 @@ namespace _15._Messages
                 string input = Console.ReadLine();
                 
                 int index = input.Length - 1;
-                Console.WriteLine("index" + index);
                 int key = int.Parse(input[0].ToString());
-                Console.WriteLine("key" + key);
                 result += dict[key][index].ToString();
-                Console.WriteLine("result" + result);
              
             }
 
