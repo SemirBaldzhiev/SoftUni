@@ -19,7 +19,7 @@ namespace _06._ForeignLanguages
                 case "Spain":
                 case "Mexico":
                 case "Argentina":
-                    language = "Spamish";
+                    language = "Spanish";
                     break;
 
                 default:
