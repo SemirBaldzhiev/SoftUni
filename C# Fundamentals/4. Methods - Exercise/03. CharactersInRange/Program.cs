@@ -16,8 +16,23 @@ namespace _03._CharactersInRange
         {
             int firstCharAscii = (int)firstChar;
             int secondCharAscii = (int)secondChar;
+            int start = 0;
+            int end = 0;
 
-            for (int i = firstCharAscii + 1; i < secondCharAscii; i++)
+            if (firstCharAscii > secondChar)
+            {
+                end = firstCharAscii;
+                start = secondCharAscii;
+            }
+            else
+            {
+                start = firstCharAscii;
+                end = secondCharAscii;
+            }
+
+            
+
+            for (int i = start + 1; i < end; i++)
             {
                 Console.WriteLine($"{(char)i} ");
             }
