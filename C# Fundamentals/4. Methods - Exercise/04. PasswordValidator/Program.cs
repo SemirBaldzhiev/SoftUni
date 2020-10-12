@@ -44,18 +44,20 @@ namespace _04._PasswordValidator
 
         private static bool OnlyLettersAndDigits(string password)
         {
+            bool isValid = false;
+
             for (int i = 0; i < password.Length; i++)
             {
                 if ((password[i] >= 48 && password[i] <= 57) || 
                     (password[i] >= 65 && password[i] <= 90) || 
                     (password[i] >= 97 && password[i] <= 122))
                 {
-                    return true;
+                    isValid = true;
                 }
             }
 
             Console.WriteLine("Password must consist only of letters and digits");
-            return false;
+            return isValid;
         }
 
         private static bool BetweenSixAndTenCharacters(string password)
