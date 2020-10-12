@@ -34,7 +34,7 @@ namespace _03._CharactersInRange
 
             for (int i = start + 1; i < end; i++)
             {
-                Console.WriteLine($"{(char)i} ");
+                Console.Write($"{(char)i} ");
             }
         }
     }
