@@ -54,11 +54,14 @@ namespace _04._PasswordValidator
                 {
                     isValid = true;
                 }
+                else
+                {
+                    Console.WriteLine("Password must consist only of letters and digits");
+                    return false;
+                }
+
             }
-            if (isValid == false)
-            {
-                Console.WriteLine("Password must consist only of letters and digits");
-            }
+           
             return isValid;
         }
 
