@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. PalindromeIntegers", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. TopNumber", "10. TopNumber\10. TopNumber.csproj", "{ABB0343B-3B1C-4848-B27B-9582447EDAD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. ArrayManipulator", "11. ArrayManipulator\11. ArrayManipulator.csproj", "{C9D58206-7768-4254-9A50-1D952C840DFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. DataTypes", "12. DataTypes\12. DataTypes.csproj", "{15473029-D959-47C0-91EA-C50C8393FC82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{ABB0343B-3B1C-4848-B27B-9582447EDAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABB0343B-3B1C-4848-B27B-9582447EDAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABB0343B-3B1C-4848-B27B-9582447EDAD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9D58206-7768-4254-9A50-1D952C840DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9D58206-7768-4254-9A50-1D952C840DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9D58206-7768-4254-9A50-1D952C840DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9D58206-7768-4254-9A50-1D952C840DFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15473029-D959-47C0-91EA-C50C8393FC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15473029-D959-47C0-91EA-C50C8393FC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15473029-D959-47C0-91EA-C50C8393FC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15473029-D959-47C0-91EA-C50C8393FC82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
