@@ -13,7 +13,7 @@ namespace _12._DataTypes
                 int num = int.Parse(Console.ReadLine());
                 Multiply(num);
             }
-            else if (dataType == "double")
+            else if (dataType == "real")
             {
                 double num = double.Parse(Console.ReadLine());
                 Multiply(num);
