@@ -27,8 +27,13 @@ namespace _09._PalindromeIntegers
 
         private static bool IsPalindrome(int number)
         {
-            
-            if (number.ToString() == number.ToString().Reverse().ToString())
+
+            string numStr = number.ToString();
+            char[] array = numStr.ToCharArray();
+            Array.Reverse(array);
+            string numStrReverse = new string(array);
+                
+            if (numStr == numStrReverse)
             {
                 return true;
             }

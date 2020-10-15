@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. FactorialDivision", "08
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. PalindromeIntegers", "09. PalindromeIntegers\09. PalindromeIntegers.csproj", "{C7974BDA-4EA0-4BEB-A6DE-1779118B430C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. TopNumber", "10. TopNumber\10. TopNumber.csproj", "{ABB0343B-3B1C-4848-B27B-9582447EDAD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{C7974BDA-4EA0-4BEB-A6DE-1779118B430C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7974BDA-4EA0-4BEB-A6DE-1779118B430C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7974BDA-4EA0-4BEB-A6DE-1779118B430C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB0343B-3B1C-4848-B27B-9582447EDAD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB0343B-3B1C-4848-B27B-9582447EDAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB0343B-3B1C-4848-B27B-9582447EDAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB0343B-3B1C-4848-B27B-9582447EDAD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
