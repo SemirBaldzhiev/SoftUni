@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Train", "01. Train\01. Train.csproj", "{00B338D3-F6B6-4A23-8D74-5B3C7A0C0F22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Train", "01. Train\01. Train.csproj", "{00B338D3-F6B6-4A23-8D74-5B3C7A0C0F22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. ChangeList", "02. ChangeList\02. ChangeList.csproj", "{508C037A-1170-455A-ACFB-A06611BCD2A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{00B338D3-F6B6-4A23-8D74-5B3C7A0C0F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B338D3-F6B6-4A23-8D74-5B3C7A0C0F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B338D3-F6B6-4A23-8D74-5B3C7A0C0F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{508C037A-1170-455A-ACFB-A06611BCD2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{508C037A-1170-455A-ACFB-A06611BCD2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{508C037A-1170-455A-ACFB-A06611BCD2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{508C037A-1170-455A-ACFB-A06611BCD2A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
