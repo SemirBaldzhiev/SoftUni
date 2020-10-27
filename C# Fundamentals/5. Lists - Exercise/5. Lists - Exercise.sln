@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. BombNumbers", "05. Bomb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. CardsGame", "06. CardsGame\06. CardsGame.csproj", "{C6411499-EF52-4E78-9186-92E6F4A98D52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. AppendArrays", "07. AppendArrays\07. AppendArrays.csproj", "{F0E9591A-CAF3-4108-9CAB-B78E127A6468}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C6411499-EF52-4E78-9186-92E6F4A98D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6411499-EF52-4E78-9186-92E6F4A98D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6411499-EF52-4E78-9186-92E6F4A98D52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0E9591A-CAF3-4108-9CAB-B78E127A6468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E9591A-CAF3-4108-9CAB-B78E127A6468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E9591A-CAF3-4108-9CAB-B78E127A6468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E9591A-CAF3-4108-9CAB-B78E127A6468}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
