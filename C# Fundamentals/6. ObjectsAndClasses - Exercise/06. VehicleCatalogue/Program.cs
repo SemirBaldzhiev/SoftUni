@@ -37,16 +37,31 @@ namespace _06._VehicleCatalogue
                 model = Console.ReadLine();
             }
 
-            int sumCarsHorsepower = vehicles.Where(x => x.Type == "car").Sum(x => x.Horsepower);
-            int countTypeOfCars = vehicles.Where(x => x.Type == "car").Count();
+            double sumCarsHorsepower = vehicles.Where(x => x.Type == "car").Sum(x => x.Horsepower);
+            double countTypeOfCars = vehicles.Where(x => x.Type == "car").Count();
             double averageCarHorsepower = sumCarsHorsepower / (double)countTypeOfCars;
 
-            int sumTrucksHorsepower = vehicles.Where(x => x.Type == "truck").Sum(x => x.Horsepower);
-            int countTypeOfTrucks = vehicles.Where(x => x.Type == "truck").Count();
-            double averageTruckHorsepower = sumTrucksHorsepower / (double)countTypeOfTrucks;
+            double sumTrucksHorsepower = vehicles.Where(x => x.Type == "truck").Sum(x => x.Horsepower);
+            double countTypeOfTrucks = vehicles.Where(x => x.Type == "truck").Count();
+            double averageTruckHorsepower = (double)sumTrucksHorsepower / (double)countTypeOfTrucks;
 
-            Console.WriteLine($"Cars have average horsepower of: {averageCarHorsepower:f2}.");
-            Console.WriteLine($"Trucks have average horsepower of: {averageTruckHorsepower:f2}.");
+            if (countTypeOfCars <= 0)
+            {
+                Console.WriteLine($"Cars have average horsepower of: {0:f2}.");
+            }
+            else
+            {
+                Console.WriteLine($"Cars have average horsepower of: {averageCarHorsepower:f2}.");
+            }
+            if (countTypeOfTrucks <= 0)
+            {
+                Console.WriteLine($"Trucks have average horsepower of: {0:f2}.");
+            }
+            else
+            {
+                Console.WriteLine($"Trucks have average horsepower of: {averageTruckHorsepower:f2}.");
+            }
+            
         }
         
     }
