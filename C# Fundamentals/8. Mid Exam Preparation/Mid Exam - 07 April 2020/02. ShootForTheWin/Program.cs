@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _01._CounterStrike
+namespace _02._ShootForTheWin
 {
     class Program
     {
