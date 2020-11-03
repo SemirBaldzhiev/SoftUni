@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mid Exam - 07 April 2020", "Mid Exam - 07 April 2020", "{B078BC60-43B9-4C59-9770-B93E1FFBF282}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. CounterStrike", "01. CounterStrike\01. CounterStrike.csproj", "{2B09B041-2286-48E2-8249-0D4808298E9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B09B041-2286-48E2-8249-0D4808298E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B09B041-2286-48E2-8249-0D4808298E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B09B041-2286-48E2-8249-0D4808298E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B09B041-2286-48E2-8249-0D4808298E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B09B041-2286-48E2-8249-0D4808298E9D} = {B078BC60-43B9-4C59-9770-B93E1FFBF282}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C33CB5C8-A2F0-41A6-971E-F006078635D5}
+	EndGlobalSection
+EndGlobal
