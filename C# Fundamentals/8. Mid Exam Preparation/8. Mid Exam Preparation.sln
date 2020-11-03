@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. ShootForTheWin", "Mid E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. CounterStrike", "Mid Exam - 07 April 2020\01. CounterStrike\01. CounterStrike.csproj", "{34A877ED-2503-4B81-A13A-FEA59ED3D1FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. MovingTarget", "Mid Exam - 07 April 2020\03. MovingTarget\03. MovingTarget.csproj", "{13D0AF97-3A3E-49F5-89C1-5FEEE2572B60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{34A877ED-2503-4B81-A13A-FEA59ED3D1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34A877ED-2503-4B81-A13A-FEA59ED3D1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34A877ED-2503-4B81-A13A-FEA59ED3D1FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13D0AF97-3A3E-49F5-89C1-5FEEE2572B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D0AF97-3A3E-49F5-89C1-5FEEE2572B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13D0AF97-3A3E-49F5-89C1-5FEEE2572B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13D0AF97-3A3E-49F5-89C1-5FEEE2572B60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{61088E85-8161-4DC6-8328-7F72521FAC9D} = {B078BC60-43B9-4C59-9770-B93E1FFBF282}
 		{34A877ED-2503-4B81-A13A-FEA59ED3D1FC} = {B078BC60-43B9-4C59-9770-B93E1FFBF282}
+		{13D0AF97-3A3E-49F5-89C1-5FEEE2572B60} = {B078BC60-43B9-4C59-9770-B93E1FFBF282}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C33CB5C8-A2F0-41A6-971E-F006078635D5}
