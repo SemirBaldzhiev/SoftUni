@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. ShoppingList", "Mid Exa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. HeartDelivery", "Mid Exam - 29 February 2020 Group 2\03. HeartDelivery\03. HeartDelivery.csproj", "{53C80CAB-843B-45A3-A018-136640583063}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mid Exam - 29 February 2020 Group 1", "Mid Exam - 29 February 2020 Group 1", "{33D3CAEB-A6B8-490C-8BD3-52E82848BE30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. BonusScoringSystem", "Mid Exam - 29 February 2020 Group 1\01. BonusScoringSystem\01. BonusScoringSystem.csproj", "{A736EB3C-5724-4EBC-B0EB-9CD5F915E7B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{53C80CAB-843B-45A3-A018-136640583063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53C80CAB-843B-45A3-A018-136640583063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53C80CAB-843B-45A3-A018-136640583063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A736EB3C-5724-4EBC-B0EB-9CD5F915E7B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A736EB3C-5724-4EBC-B0EB-9CD5F915E7B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A736EB3C-5724-4EBC-B0EB-9CD5F915E7B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A736EB3C-5724-4EBC-B0EB-9CD5F915E7B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{7D62C563-AC3F-4FB4-BED7-AF63F869F8F3} = {A2774B7F-13DA-4E27-968E-01DCAC8B1F4D}
 		{3B5B5B84-EA83-4752-AB5B-8543E6F11E91} = {A2774B7F-13DA-4E27-968E-01DCAC8B1F4D}
 		{53C80CAB-843B-45A3-A018-136640583063} = {A2774B7F-13DA-4E27-968E-01DCAC8B1F4D}
+		{A736EB3C-5724-4EBC-B0EB-9CD5F915E7B5} = {33D3CAEB-A6B8-490C-8BD3-52E82848BE30}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C33CB5C8-A2F0-41A6-971E-F006078635D5}
