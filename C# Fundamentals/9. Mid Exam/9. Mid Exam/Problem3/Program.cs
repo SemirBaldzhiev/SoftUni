@@ -9,8 +9,7 @@ namespace Problem3
         static void Main(string[] args)
         {
             List<string> cards = Console.ReadLine().Split(", ").ToList();
-            int commandsCount = int.Parse(Console.ReadLine());
-
+            
             for (int i = 0; i < commandsCount; i++)
             {
                 string[] commands = Console.ReadLine().Split(", ").ToArray();
