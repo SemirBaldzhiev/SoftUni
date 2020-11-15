@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. CountCharsInString", "01. CountCharsInString\01. CountCharsInString.csproj", "{98D6FC52-0912-4D1C-AEE4-FEC3FB3CC13C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. CountCharsInString", "01. CountCharsInString\01. CountCharsInString.csproj", "{98D6FC52-0912-4D1C-AEE4-FEC3FB3CC13C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. MinerTask", "02. MinerTask\02. MinerTask.csproj", "{D605C35D-3900-4951-A5B6-1183BC0FCE1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. MinerTask", "02. MinerTask\02. MinerTask.csproj", "{D605C35D-3900-4951-A5B6-1183BC0FCE1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. LegendaryFarming", "03. LegendaryFarming\03. LegendaryFarming.csproj", "{40384ED5-9784-4A3A-B1E1-3BF1A113E4D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. LegendaryFarming", "03. LegendaryFarming\03. LegendaryFarming.csproj", "{40384ED5-9784-4A3A-B1E1-3BF1A113E4D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Orders", "04. Orders\04. Orders.csproj", "{FC7E001B-6DA8-4B1D-A926-F3F69DCA5E8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{40384ED5-9784-4A3A-B1E1-3BF1A113E4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40384ED5-9784-4A3A-B1E1-3BF1A113E4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40384ED5-9784-4A3A-B1E1-3BF1A113E4D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC7E001B-6DA8-4B1D-A926-F3F69DCA5E8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC7E001B-6DA8-4B1D-A926-F3F69DCA5E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC7E001B-6DA8-4B1D-A926-F3F69DCA5E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC7E001B-6DA8-4B1D-A926-F3F69DCA5E8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

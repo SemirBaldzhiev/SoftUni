@@ -15,8 +15,6 @@ namespace _03._LegendaryFarming
             dictionary.Add("shards", 0);
             dictionary.Add("fragments", 0);
 
-
-
             bool isObtained = false;
             string legendaryItem = string.Empty;
 
