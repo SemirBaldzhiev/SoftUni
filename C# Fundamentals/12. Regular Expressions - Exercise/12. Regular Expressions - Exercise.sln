@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Furniture", "01. Furniture\01. Furniture.csproj", "{0310619B-1CCF-4DF9-9937-390BD763B105}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Furniture", "01. Furniture\01. Furniture.csproj", "{0310619B-1CCF-4DF9-9937-390BD763B105}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Race", "02. Race\02. Race.csproj", "{729BB980-A3EB-437E-B1F1-648DEE1A65CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Race", "02. Race\02. Race.csproj", "{729BB980-A3EB-437E-B1F1-648DEE1A65CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. SoftUniBarIncome", "03. SoftUniBarIncome\03. SoftUniBarIncome.csproj", "{FE3E3F24-CC4B-46F8-ACF4-10BF1041B729}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. SoftUniBarIncome", "03. SoftUniBarIncome\03. SoftUniBarIncome.csproj", "{FE3E3F24-CC4B-46F8-ACF4-10BF1041B729}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. StarEnigma", "04. StarEnigma\04. StarEnigma.csproj", "{888BFEAE-83B5-4C47-A44D-DEDEF6B67076}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. StarEnigma", "04. StarEnigma\04. StarEnigma.csproj", "{888BFEAE-83B5-4C47-A44D-DEDEF6B67076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. NetherRealms", "05. NetherRealms\05. NetherRealms.csproj", "{C674E853-CE95-4478-9F2C-8816B54D1D67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. NetherRealms", "05. NetherRealms\05. NetherRealms.csproj", "{C674E853-CE95-4478-9F2C-8816B54D1D67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. ExtractEmails", "06. ExtractEmails\06. ExtractEmails.csproj", "{664B8C9B-85AB-43AD-9F92-43143B487C87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C674E853-CE95-4478-9F2C-8816B54D1D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C674E853-CE95-4478-9F2C-8816B54D1D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C674E853-CE95-4478-9F2C-8816B54D1D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664B8C9B-85AB-43AD-9F92-43143B487C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664B8C9B-85AB-43AD-9F92-43143B487C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664B8C9B-85AB-43AD-9F92-43143B487C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664B8C9B-85AB-43AD-9F92-43143B487C87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
