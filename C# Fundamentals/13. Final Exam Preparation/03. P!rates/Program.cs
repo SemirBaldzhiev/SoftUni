@@ -109,8 +109,6 @@ namespace _03._P_rates
             {
                 Console.WriteLine("Ahoy, Captain! All targets have been plundered and destroyed!");
             }
-
-            
         }
 
         private static void ProsperCity(string town, int gold, List<City> cities)
