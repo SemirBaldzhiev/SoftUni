@@ -15,15 +15,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. FancyBarcodes", "05. Fa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06. HeroesOfCodeAndLogicVII", "06. HeroesOfCodeAndLogicVII\06. HeroesOfCodeAndLogicVII.csproj", "{A6FDC9C2-DDBA-418E-B1BA-C1AB0C32B35D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. SecretChat", "07. SecretChat\07. SecretChat.csproj", "{3B3DCF13-3B24-44D6-AFD8-C3A4CB8D30C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07. SecretChat", "07. SecretChat\07. SecretChat.csproj", "{3B3DCF13-3B24-44D6-AFD8-C3A4CB8D30C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. MirrorWords", "08. MirrorWords\08. MirrorWords.csproj", "{9F32004A-4B95-4B2E-BE5D-55203CF1CD1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08. MirrorWords", "08. MirrorWords\08. MirrorWords.csproj", "{9F32004A-4B95-4B2E-BE5D-55203CF1CD1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. NeedForSpeedIII", "09. NeedForSpeedIII\09. NeedForSpeedIII.csproj", "{99E1E12C-20F6-40B0-9138-72AFC37713EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09. NeedForSpeedIII", "09. NeedForSpeedIII\09. NeedForSpeedIII.csproj", "{99E1E12C-20F6-40B0-9138-72AFC37713EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. WorldTour", "10. WorldTour\10. WorldTour.csproj", "{5DC33B79-DE4C-40F9-8550-24D7AD7ACEA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10. WorldTour", "10. WorldTour\10. WorldTour.csproj", "{5DC33B79-DE4C-40F9-8550-24D7AD7ACEA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. DestinationMapper", "11. DestinationMapper\11. DestinationMapper.csproj", "{36D4CDD3-F811-4D66-9341-20B158C3AC53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11. DestinationMapper", "11. DestinationMapper\11. DestinationMapper.csproj", "{36D4CDD3-F811-4D66-9341-20B158C3AC53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. PlantDiscovery", "12. PlantDiscovery\12. PlantDiscovery.csproj", "{B9A21325-975E-41A0-8E7D-2E25ABB5B9FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{36D4CDD3-F811-4D66-9341-20B158C3AC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36D4CDD3-F811-4D66-9341-20B158C3AC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36D4CDD3-F811-4D66-9341-20B158C3AC53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A21325-975E-41A0-8E7D-2E25ABB5B9FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A21325-975E-41A0-8E7D-2E25ABB5B9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A21325-975E-41A0-8E7D-2E25ABB5B9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A21325-975E-41A0-8E7D-2E25ABB5B9FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
