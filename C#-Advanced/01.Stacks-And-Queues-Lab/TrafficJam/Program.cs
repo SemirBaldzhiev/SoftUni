@@ -5,7 +5,7 @@ namespace TrafficJam
 {
     class Program
     {
-        static void Main(string[] args)
+       ConsoleApp1 static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
 
