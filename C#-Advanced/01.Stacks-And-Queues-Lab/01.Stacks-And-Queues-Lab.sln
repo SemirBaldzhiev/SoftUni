@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintEvenNumbers", "PintEve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supermarket", "Supermarket\Supermarket.csproj", "{F96E9A31-0688-4CC4-9E75-407FF8B54877}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotPotato", "HotPotato\HotPotato.csproj", "{1F694C1A-779A-46BD-934F-7957A5AE83ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficJam", "TrafficJam\TrafficJam.csproj", "{4EE6B66C-B82E-4A5E-B66D-66887C201E32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{F96E9A31-0688-4CC4-9E75-407FF8B54877}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F96E9A31-0688-4CC4-9E75-407FF8B54877}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F96E9A31-0688-4CC4-9E75-407FF8B54877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F694C1A-779A-46BD-934F-7957A5AE83ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F694C1A-779A-46BD-934F-7957A5AE83ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F694C1A-779A-46BD-934F-7957A5AE83ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F694C1A-779A-46BD-934F-7957A5AE83ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE6B66C-B82E-4A5E-B66D-66887C201E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE6B66C-B82E-4A5E-B66D-66887C201E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE6B66C-B82E-4A5E-B66D-66887C201E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE6B66C-B82E-4A5E-B66D-66887C201E32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
