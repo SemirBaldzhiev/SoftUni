@@ -7,11 +7,7 @@ namespace FastFood
     class Program
     {
         static void Main(string[] args)
-        {
-
-            //499
-            //57 45 62 70 33 90 88 76
-
+        { 
             int foodQuantity = int.Parse(Console.ReadLine());
             int[] ordersData = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
