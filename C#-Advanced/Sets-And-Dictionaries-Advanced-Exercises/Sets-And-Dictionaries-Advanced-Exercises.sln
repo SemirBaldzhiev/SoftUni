@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountSymbols", "CountSymbol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wardrobe", "Wardrobe\Wardrobe.csproj", "{8148D062-D911-4CC5-BEF8-0AFEF7684BAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheV-Logger", "TheV-Logger\TheV-Logger.csproj", "{9FC5356F-42C7-4D2A-8591-5FFD06FB1166}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{8148D062-D911-4CC5-BEF8-0AFEF7684BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8148D062-D911-4CC5-BEF8-0AFEF7684BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8148D062-D911-4CC5-BEF8-0AFEF7684BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC5356F-42C7-4D2A-8591-5FFD06FB1166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC5356F-42C7-4D2A-8591-5FFD06FB1166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC5356F-42C7-4D2A-8591-5FFD06FB1166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC5356F-42C7-4D2A-8591-5FFD06FB1166}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
