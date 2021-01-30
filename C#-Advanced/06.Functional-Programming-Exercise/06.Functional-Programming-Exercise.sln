@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.FindEvensOrOdds", "04.Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.AppliedArithmetics", "06.ReverseAndExclude\05.AppliedArithmetics.csproj", "{8AB0B965-1E4F-4E95-8673-341F45EBECC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.ReverseAndExclude", "06.ReverseAndExclude\06.ReverseAndExclude.csproj", "{467BF7A9-A4B7-4115-85F9-E72DC3772302}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8AB0B965-1E4F-4E95-8673-341F45EBECC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AB0B965-1E4F-4E95-8673-341F45EBECC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AB0B965-1E4F-4E95-8673-341F45EBECC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467BF7A9-A4B7-4115-85F9-E72DC3772302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467BF7A9-A4B7-4115-85F9-E72DC3772302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467BF7A9-A4B7-4115-85F9-E72DC3772302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467BF7A9-A4B7-4115-85F9-E72DC3772302}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
