@@ -32,13 +32,13 @@ namespace Vehicles
                         {
                             truck.Drive(distance);
                         }
+
+                        Console.WriteLine($"{vehicleType} travelled {distance} km");
                     }
                     catch (InvalidOperationException ex)
                     {
                         Console.WriteLine(ex.Message);
                     }
-
-                    Console.WriteLine($"{vehicleType} travelled {distance} km");
                 }
                 else if (command == "Refuel")
                 {
