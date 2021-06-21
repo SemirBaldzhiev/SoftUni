@@ -18,30 +18,21 @@
     String.prototype.isEmpty = function() {
         return this.toString() === '';
     };
-
-    String.prototype.truncate = function(n) {
-        if (this.length < n) {
-            return this.toString();
+    
+    String.prototype.truncate = function (n) {
+        if(n <= 3){
+            return ".".repeat(n);
         }
-
-        if (this.toString().includes(' ')) {
-            let words = this.split(' ');
-
-            while(words.join(' ').length + 3 > n){
-                words.pop();
-            }
-
-            let sentence = `${words.join(' ')}...`;
-            return sentence;
-        }
-
-        if (n > 3) {
-            let string = `${this.slice(0, n - 3)}...`;
-            return string;
-        }
-
-        return '.'.repeat(n);
-        
+      if(this.toString().length <= n){
+          return this.toString();
+      } else {
+          let lastIndex = this.toString().substr(0, n - 2).lastIndexOf(" ");
+          if(lastIndex != -1){
+              return this.toString().substr(0, lastIndex) + "...";
+          } else {
+              return this.toString().substr(0, n-3) + "...";
+          }
+      }
     };
 
     String.format = function (string, ...args) {
