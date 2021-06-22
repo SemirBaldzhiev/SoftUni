@@ -1,12 +1,10 @@
 function solve(arr) {
-    return arr.reduce((a, x) => 
-    {
-        x >= (a.slice(-1)) ? a.push(x) : null; 
-        return a
+    let sorted = arr.sort((a, b) => a - b); 
+    let result = [];
+    while (sorted.length != 0) {
+        let [smallest, biggest] = [sorted.shift(), sorted.pop()]; 
+        result.push(smallest, biggest);
     }
-    , []);
+    return result;
 }
-
-console.log(solve([1, 3, 8, 4, 10, 12, 3, 2, 24]))
-
   
