@@ -22,7 +22,7 @@ function attachEvents() {
             let createResponse = await fetch('http://localhost:3030/jsonstore/messenger', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'aplication/json'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(newMessage)
             });
