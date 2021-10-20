@@ -8,7 +8,8 @@
     {
         private const int DefaultCapacity = 4;
 
-        private T[] _items;
+        private T[] items;
+        private int index = 0;
 
         public ReversedList()
             : this(DefaultCapacity) { }
@@ -18,61 +19,131 @@
             if (capacity < 0)
                 throw new ArgumentOutOfRangeException(nameof(capacity));
 
-            this._items = new T[capacity];
+            this.items = new T[capacity];
         }
 
         public T this[int index]
         {
             get
             {
-                throw new NotImplementedException();
+                ValidateIndex();
+                return items[Count - 1 - index]
             }
             set
             {
-                throw new NotImplementedException();
+                ValidateIndex();
+                items[index] = value
             }
         }
 
-        public int Count { get; private set; }
+        public int Count { get { return index }; private set; }
 
         public void Add(T item)
         {
-            throw new NotImplementedException();
+            GrowIfNecessary();
+
+            array[index++] = item;
         }
 
         public bool Contains(T item)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < Count; i++)
+			{
+                if (items[i] == item)
+	            {
+                    return true;
+	            }
+			}
+
+            return false;
         }
 
         public int IndexOf(T item)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < Count; i++)
+			{
+                if (items[i] == item)
+	            {
+                    return Count - 1 - i;
+	            }
+			}
+
+            return -1;
         }
 
         public void Insert(int index, T item)
         {
-            throw new NotImplementedException();
+            ValidateIndex(index);
+            GrowIfNecessary();
+
+            for (int i = Count; i > index; i--)
+            {
+                array[i] = array[i - 1];
+            }
+
+            array[index] = element;
+            this.index++;
         }
 
         public bool Remove(T item)
         {
-            throw new NotImplementedException();
+            int currentIndex = IndexOf(item);
+
+            RemoveAt(currentIndex);
+            this.index--;
         }
 
         public void RemoveAt(int index)
         {
-            throw new NotImplementedException();
+            ValidateIndex(index);
+
+            for (int i = index; i < Count - 1; i++)
+            {
+                array[i] = array[i + 1];
+            }
+
+            array[Count - 1] = default;
+            this.index--;
         }
 
-        public IEnumerator<T> GetEnumerator()
+         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < Count; i++)
+			{
+                yield return items[i];
+			}
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator() 
+            => this.GetEnumerator();
+
+         private T[] DoubleArraySize(T[] array)
         {
-            throw new NotImplementedException();
+
+            T[] newArray = new T[array.Length * 2];
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                newArray[i] = array[i];
+            }
+
+            return newArray;
+        }
+
+        private void GrowIfNecessary()
+        {
+            if (this.index == array.Length)
+            {
+                array = DoubleArraySize(array);
+            }
+        }
+
+        private void ValidateIndex(int index)
+        {
+            if (index < 0 || index >= Count)
+            {
+                throw new IndexOutOfRangeException("Invalid index");
+            }
         }
     }
 }
