@@ -45,14 +45,14 @@
 
                     if (entityType != typeof(SongPerformer))
                     {
-                        context.Database.ExecuteSqlInterpolated($"SET IDENTITY_INSERT {entityName} ON;");
+                        context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT " + entityName + " ON;");
                     }
 
                     context.SaveChanges();
 
                     if (entityType != typeof(SongPerformer))
                     {
-                        context.Database.ExecuteSqlInterpolated($"SET IDENTITY_INSERT {entityName} OFF;");
+                        context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT " + entityName + "  OFF;");
                     }
                     transaction.Commit();
                 }
