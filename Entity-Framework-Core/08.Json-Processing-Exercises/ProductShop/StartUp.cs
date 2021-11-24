@@ -1,0 +1,133 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using AutoMapper;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using ProductShop.Data;
+using ProductShop.Dtos;
+using ProductShop.Models;
+
+namespace ProductShop
+{
+    public class StartUp
+    {
+        private static IMapper mapper;
+
+        public static void Main(string[] args)
+        {
+            var context = new ProductShopContext();
+
+            //context.Database.EnsureDeleted();
+            //context.Database.EnsureCreated();
+
+            //string usersJsonString = File.ReadAllText("../../../Datasets/users.json");
+            //string productsJsonString = File.ReadAllText("../../../Datasets/products.json");
+            //string categoriesJsonString = File.ReadAllText("../../../Datasets/categories.json");
+            //string categorProductJsonString = File.ReadAllText("../../../Datasets/categories-products.json");
+
+            //Console.WriteLine(ImportUsers(context, usersJsonString));
+            //Console.WriteLine(ImportProducts(context, productsJsonString));
+            //Console.WriteLine(ImportCategories(context, categoriesJsonString));
+            //Console.WriteLine(ImportCategoryProducts(context, categorProductJsonString));
+
+            Console.WriteLine(GetProductsInRange(context));
+        }
+
+        // Import Problems
+        public static string ImportUsers(ProductShopContext context, string inputJson)
+        {
+            IEnumerable<InputUserDto> users = JsonConvert.DeserializeObject<IEnumerable<InputUserDto>>(inputJson);
+            InitializeMapper();
+
+            IEnumerable<User> mappedUsers = mapper.Map<IEnumerable<User>>(users);
+
+            context.Users.AddRange(mappedUsers);
+            context.SaveChanges();
+
+            return $"Successfully imported {mappedUsers.Count()}";
+        }
+
+        public static string ImportProducts(ProductShopContext context, string inputJson)
+        {
+            IEnumerable<InputProductDto> products = JsonConvert.DeserializeObject<IEnumerable<InputProductDto>>(inputJson);
+
+            InitializeMapper();
+
+            IEnumerable<Product> mappedProducts = mapper.Map<IEnumerable<Product>>(products);
+
+            context.Products.AddRange(mappedProducts);
+            context.SaveChanges();
+
+            return $"Successfully imported {mappedProducts.Count()}";
+        }
+
+        public static string ImportCategories(ProductShopContext context, string inputJson)
+        {
+            IEnumerable<InputCategoryDto> categories  = JsonConvert.DeserializeObject<IEnumerable<InputCategoryDto>>(inputJson)
+                .Where(x => !string.IsNullOrEmpty(x.Name));
+
+            InitializeMapper();
+
+            var mappedCategories = mapper.Map<IEnumerable<Category>>(categories);
+
+            context.Categories.AddRange(mappedCategories);
+            context.SaveChanges();
+
+            return $"Successfully imported {mappedCategories.Count()}";
+        }
+
+        public static string ImportCategoryProducts(ProductShopContext context, string inputJson)
+        {
+            IEnumerable<InputCategoryProductDto> categoryProducts = 
+                JsonConvert.DeserializeObject<IEnumerable<InputCategoryProductDto>>(inputJson);
+
+            InitializeMapper();
+
+            var mappedCategoryProducts = mapper.Map<IEnumerable<CategoryProduct>>(categoryProducts);
+
+            context.CategoryProducts.AddRange(mappedCategoryProducts);
+            context.SaveChanges();
+
+            return $"Successfully imported {mappedCategoryProducts.Count()}";
+        }
+
+        public static void InitializeMapper()
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<ProductShopProfile>();
+            });
+
+            mapper = new Mapper(config);
+        }
+
+        // Export Problems
+        public static string GetProductsInRange(ProductShopContext context)
+        {
+
+            JsonSerializerSettings settings = new JsonSerializerSettings()
+            {
+                Formatting = Formatting.Indented,
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+
+
+            var products = context.Products
+                .Where(p => p.Price >= 500 && p.Price <= 1000)
+                .Select(p => new
+                {
+                    Name = p.Name,
+                    Price = p.Price,
+                    Seller = $"{p.Seller.FirstName} {p.Seller.LastName}"
+                })
+                .OrderBy(p => p.Price)
+                .ToList();
+
+            var productAsJson = JsonConvert.SerializeObject(products, settings);
+
+            return productAsJson;
+        }
+    }
+}
