@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using ProductShop.Data;
@@ -32,7 +33,8 @@ namespace ProductShop
             //Console.WriteLine(ImportCategories(context, categoriesJsonString));
             //Console.WriteLine(ImportCategoryProducts(context, categorProductJsonString));
 
-            Console.WriteLine(GetProductsInRange(context));
+            //Console.WriteLine(GetProductsInRange(context));
+            Console.WriteLine(GetSoldProducts(context));
         }
 
         // Import Problems
@@ -129,5 +131,41 @@ namespace ProductShop
 
             return productAsJson;
         }
+
+        public static string GetSoldProducts(ProductShopContext context)
+        {
+            JsonSerializerSettings settings = new JsonSerializerSettings()
+            {
+                Formatting = Formatting.Indented,
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+
+            var users = context
+                .Users
+                .Include(u => u.ProductsSold)
+                .Where(u => u.ProductsSold.Count >= 1 && u.ProductsSold.Any(p => p.Buyer != null))
+                .OrderBy(u => u.LastName)
+                .ThenBy(u => u.FirstName)
+                .Select(u => new
+                {
+                    FirstName = u.FirstName,
+                    LastName = u.LastName,
+                    SoldProducts = u.ProductsSold
+                    .Select(p => new
+                    {
+                        Name = p.Name,
+                        Price = p.Price,
+                        BuyerFirstName = p.Buyer.FirstName,
+                        BuyerLastName = p.Buyer.LastName
+                    })
+                    .ToList()
+                })
+                .ToList();
+
+            var usersAsJson = JsonConvert.SerializeObject(users, settings);
+
+            return usersAsJson;
+        }
+
     }
 }
