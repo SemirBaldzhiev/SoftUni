@@ -34,7 +34,9 @@ namespace ProductShop
             //Console.WriteLine(ImportCategoryProducts(context, categorProductJsonString));
 
             //Console.WriteLine(GetProductsInRange(context));
-            Console.WriteLine(GetSoldProducts(context));
+            //Console.WriteLine(GetSoldProducts(context));
+            Console.WriteLine(GetCategoriesByProductsCount(context));
+
         }
 
         // Import Problems
@@ -165,6 +167,30 @@ namespace ProductShop
             var usersAsJson = JsonConvert.SerializeObject(users, settings);
 
             return usersAsJson;
+        }
+
+        public static string GetCategoriesByProductsCount(ProductShopContext context)
+        {
+            var categories = context.Categories
+                .Select(c => new
+                {
+                    Category = c.Name,
+                    ProductsCount = c.CategoryProducts.Count(),
+                    AveragePrice = $"{c.CategoryProducts.Sum(x => x.Product.Price) / c.CategoryProducts.Count:f2}",
+                    TotalRevenue = $"{c.CategoryProducts.Sum(x => x.Product.Price):f2}"
+                })
+                .OrderByDescending(x => x.ProductsCount)
+                .ToList();
+
+            JsonSerializerSettings settings = new JsonSerializerSettings()
+            {
+                Formatting = Formatting.Indented,
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+
+            var categoriesAsJson = JsonConvert.SerializeObject(categories, settings);
+
+            return categoriesAsJson;
         }
 
     }
