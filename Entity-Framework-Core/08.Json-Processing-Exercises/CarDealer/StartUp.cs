@@ -19,14 +19,20 @@ namespace CarDealer
         {
             var context = new CarDealerContext();
 
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
+            //context.Database.EnsureDeleted();
+            //context.Database.EnsureCreated();
 
             string suppliersJson = File.ReadAllText("../../../Datasets/suppliers.json");
+            string partsJson = File.ReadAllText("../../../Datasets/parts.json");
+
 
             string suppliersResult = ImportSuppliers(context, suppliersJson);
+            string partsResult = ImportParts(context, partsJson);
+
 
             Console.WriteLine(suppliersResult);
+            Console.WriteLine(partsResult);
+
         }
 
         // Import Problems
@@ -44,7 +50,20 @@ namespace CarDealer
             return $"Successfully imported {mappedSuppliers.Count()}.";
         }
 
+        public static string ImportParts(CarDealerContext context, string inputJson)
+        {
+            var parts = JsonConvert.DeserializeObject<IEnumerable<PartInputDto>>(inputJson)
+                .Where(p => context.Suppliers.Any(s => s.Id == p.SupplierId));
 
+            InitializeMapper();
+
+            var mappedParts = mapper.Map<IEnumerable<Part>>(parts);
+
+            context.Parts.AddRange(mappedParts);
+            context.SaveChanges();
+
+            return $"Successfully imported {mappedParts.Count()}.";
+        }
         public static void InitializeMapper()
         {
             var config = new MapperConfiguration(cfg =>
