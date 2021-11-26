@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using AutoMapper;
 using CarDealer.DTO.Input;
+using CarDealer.DTO.Output;
 using CarDealer.Models;
 
 namespace CarDealer
@@ -15,6 +16,9 @@ namespace CarDealer
             CreateMap<PartInputDto, Part>();
             CreateMap<CustomerInputDto, Customer>();
             CreateMap<SalesInputDto, Sale>();
+
+            CreateMap<Customer, OrderdCustomerDto>();
+
         }
     }
 }

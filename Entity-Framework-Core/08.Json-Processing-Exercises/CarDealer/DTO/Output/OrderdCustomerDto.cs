@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarDealer.DTO.Input
+namespace CarDealer.DTO.Output
 {
-    public class CustomerInputDto
+    public class OrderdCustomerDto
     {
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
         public bool IsYoungDriver { get; set; }
+
     }
 }
