@@ -24,6 +24,8 @@ namespace CarDealer
 
             string suppliersJson = File.ReadAllText("../../../Datasets/suppliers.json");
             string partsJson = File.ReadAllText("../../../Datasets/parts.json");
+            string carsJson = File.ReadAllText("../../../Datasets/cars.json");
+
 
 
             string suppliersResult = ImportSuppliers(context, suppliersJson);
@@ -63,6 +65,42 @@ namespace CarDealer
             context.SaveChanges();
 
             return $"Successfully imported {mappedParts.Count()}.";
+        }
+
+        public static string ImportCars(CarDealerContext context, string inputJson)
+        {
+            var cars = JsonConvert.DeserializeObject<IEnumerable<CarInputDto>>(inputJson);
+
+            foreach (var car in cars)
+            {
+                var newCar = new Car
+                {
+                    Make = car.Make,
+                    Model = car.Model,
+                    TravelledDistance = car.TravelledDistance
+                };
+
+                context.Cars.Add(newCar); 
+
+                foreach (var id in car.PartsId)
+                {
+                    var partCar = new PartCar
+                    {
+                        PartId = id,
+                        CarId = newCar.Id
+                    };
+
+                    if (newCar.PartCars.FirstOrDefault(pc => pc.PartId == id) == null)
+                    {
+                        context.PartCars.Add(partCar);
+                    }
+                }
+            }
+
+            context.SaveChanges();
+
+
+            return $"Successfully imported {cars.Count()}.";
         }
         public static void InitializeMapper()
         {
