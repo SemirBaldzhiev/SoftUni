@@ -25,16 +25,23 @@ namespace CarDealer
             string suppliersJson = File.ReadAllText("../../../Datasets/suppliers.json");
             string partsJson = File.ReadAllText("../../../Datasets/parts.json");
             string carsJson = File.ReadAllText("../../../Datasets/cars.json");
+            string customesrJson = File.ReadAllText("../../../Datasets/customers.json");
+            string salesJson = File.ReadAllText("../../../Datasets/sales.json");
 
 
 
             string suppliersResult = ImportSuppliers(context, suppliersJson);
             string partsResult = ImportParts(context, partsJson);
+            string carsResult = ImportCars(context, carsJson);
+            string customersResult = ImportCustomers(context, customesrJson);
+            string salesResult = ImportSales(context, salesJson);
 
 
             Console.WriteLine(suppliersResult);
             Console.WriteLine(partsResult);
-
+            Console.WriteLine(carsResult);
+            Console.WriteLine(customersResult);
+            Console.WriteLine(salesResult);
         }
 
         // Import Problems
@@ -101,6 +108,35 @@ namespace CarDealer
 
 
             return $"Successfully imported {cars.Count()}.";
+        }
+
+        public static string ImportCustomers(CarDealerContext context, string inputJson)
+        {
+            var customers = JsonConvert.DeserializeObject<IEnumerable<CustomerInputDto>>(inputJson);
+
+            InitializeMapper();
+
+            var mappedCustomrers = mapper.Map<IEnumerable<Customer>>(customers);
+
+            context.Customers.AddRange(mappedCustomrers);
+
+            context.SaveChanges();
+
+            return $"Successfully imported {mappedCustomrers.Count()}.";
+        }
+
+        public static string ImportSales(CarDealerContext context, string inputJson)
+        {
+            var sales = JsonConvert.DeserializeObject<IEnumerable<SalesInputDto>>(inputJson);
+
+            InitializeMapper();
+
+            var mappedSales = mapper.Map<IEnumerable<Sale>>(sales);
+
+            context.Sales.AddRange(mappedSales);
+            context.SaveChanges();
+
+            return $"Successfully imported {mappedSales.Count()}.";
         }
         public static void InitializeMapper()
         {
