@@ -18,6 +18,8 @@ namespace CarDealer
             CreateMap<SalesInputDto, Sale>();
 
             CreateMap<Customer, OrderdCustomerDto>();
+            CreateMap<Car, CarsWithMakeDto>();
+
 
         }
     }
