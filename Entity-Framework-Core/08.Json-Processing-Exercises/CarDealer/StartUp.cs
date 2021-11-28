@@ -226,6 +226,23 @@ namespace CarDealer
 
             return allCarsJson;
         }
+
+        public static string GetTotalSalesByCustomer(CarDealerContext context)
+        {
+            var customers = context.Customers
+                   .Where(c => c.Sales.Any(s => s.Car != null))
+                   .Select(c => new
+                   {
+                       fullName = c.Name,
+                       boughtCars = c.Sales.Count,
+                       spentMoney = c.Sales.Sum(s => s.Car.PartCars.Sum(pc => pc.Part.Price))
+                   })
+                   .ToList();
+
+            var customersAsJson = JsonConvert.SerializeObject(customers, Formatting.Indented);
+
+            return customersAsJson;
+        }
         public static void InitializeMapper()
         {
             var config = new MapperConfiguration(cfg =>
