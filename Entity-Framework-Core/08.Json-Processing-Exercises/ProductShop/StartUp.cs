@@ -35,7 +35,9 @@ namespace ProductShop
 
             //Console.WriteLine(GetProductsInRange(context));
             //Console.WriteLine(GetSoldProducts(context));
-            Console.WriteLine(GetCategoriesByProductsCount(context));
+            //Console.WriteLine(GetCategoriesByProductsCount(context));
+            Console.WriteLine(GetUsersWithProducts(context));
+
 
         }
 
@@ -192,6 +194,51 @@ namespace ProductShop
 
             return categoriesAsJson;
         }
+
+        public static string GetUsersWithProducts(ProductShopContext context)
+        {
+            var users = context.Users
+                .Where(u => u.ProductsSold.Any(p => p.Buyer != null))
+                .OrderByDescending(u => u.ProductsSold.Count(p => p.Buyer != null))
+                .Select(u => new
+                {
+                    FirstName = u.FirstName,
+                    LastName = u.LastName,
+                    Age = u.Age,
+                    SoldProducts = new
+                    {
+                        Count = u.ProductsSold.Count,
+                        Products = u.ProductsSold
+                        .Select(p => new
+                        {
+                            Name = p.Name,
+                            Price = p.Price
+                        })
+                        .ToList()
+                    }
+                })
+                .ToList();
+
+
+            var usersWithCount = new
+            {
+                UsersCount = users.Count,
+                User = users
+            };
+
+            JsonSerializerSettings settings = new JsonSerializerSettings()
+            {
+                Formatting = Formatting.Indented,
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                NullValueHandling = NullValueHandling.Ignore
+            };
+
+            var usersAsJson = JsonConvert.SerializeObject(usersWithCount, settings);
+
+            return usersAsJson;
+        }
+
+
 
     }
 }
