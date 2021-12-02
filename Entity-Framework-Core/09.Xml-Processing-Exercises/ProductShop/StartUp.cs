@@ -1,10 +1,12 @@
 ﻿using ProductShop.Data;
+using ProductShop.Dtos.Export;
 using ProductShop.Dtos.Import;
 using ProductShop.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Xml.Serialization;
 
 namespace ProductShop
@@ -108,7 +110,6 @@ namespace ProductShop
             }
             return $"Successfully imported {count}";
         }
-
         public static string ImportCategoryProducts(ProductShopContext context, string inputXml)
         {
             int count = 0;
@@ -135,6 +136,35 @@ namespace ProductShop
             }
 
             return $"Successfully imported {count}";
+        }
+        public static string GetProductsInRange(ProductShopContext context)
+        {
+            var products = context.Products
+                .Where(p => p.Price >= 500 && p.Price <= 1000)
+                .OrderBy(p => p.Price)
+                .Select(p => new ExportProductsInRangeDto
+                {
+                    Name = p.Name,
+                    Price = p.Price,
+                    Buyer = p.Buyer.FirstName + " " + p.Buyer.LastName
+                })
+                .Take(10)
+                .ToArray();
+
+            var sb = new StringBuilder();
+
+            using (var writer = new StringWriter(sb))
+            {
+                var ns = new XmlSerializerNamespaces();
+                ns.Add(string.Empty, string.Empty);
+
+                var serializer = new XmlSerializer(
+                    typeof(ExportProductsInRangeDto[]),
+                    new XmlRootAttribute("Products"));
+                serializer.Serialize(writer, products, ns);
+            }
+
+            return sb.ToString().TrimEnd();
         }
     }
 }
