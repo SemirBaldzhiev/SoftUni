@@ -166,5 +166,42 @@ namespace ProductShop
 
             return sb.ToString().TrimEnd();
         }
+
+        public static string GetSoldProducts(ProductShopContext context)
+        {
+            var users = context.Users
+                .Where(u => u.ProductsSold.Any(ps => ps.Buyer != null))
+                .OrderBy(u => u.LastName)
+                .ThenBy(u => u.FirstName)
+                .Select(u => new ExportUserDto
+                {
+                    FirstName = u.FirstName,
+                    LastName = u.LastName,
+                    SoldProducts = u.ProductsSold
+                        .Where(ps => ps.Buyer != null)
+                        .Select(ps => new ExportUserProductDto
+                        {
+                            Name = ps.Name,
+                            Price = ps.Price
+                        })
+                        .ToArray()
+                })
+                .Take(5)
+                .ToArray();
+
+            var sb = new StringBuilder();
+
+            using (var writer = new StringWriter(sb))
+            {
+                var ns = new XmlSerializerNamespaces();
+                ns.Add(string.Empty, string.Empty);
+
+                var serializer = new XmlSerializer(typeof(ExportUserDto[]), new XmlRootAttribute("Users"));
+                serializer.Serialize(writer, users, ns);
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
     }
 }
