@@ -2,6 +2,7 @@
 using ProductShop.Dtos.Import;
 using ProductShop.Models;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -14,19 +15,28 @@ namespace ProductShop
         {
             var context = new ProductShopContext();
 
-            string usersXml = File.ReadAllText("../../../Datasets/users.xml");
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
 
-            Console.WriteLine(ImportUsers(context, usersXml));
+            string usersXml = File.ReadAllText("../../../Datasets/users.xml");
+            string productsXml = File.ReadAllText("../../../Datasets/products.xml");
+            string categoryProductsXml = File.ReadAllText("../../../Datasets/categories-products.xml");
+            string categoryXml = File.ReadAllText("../../../Datasets/categories.xml");
+
+            //Console.WriteLine(ImportUsers(context, usersXml));
+            //Console.WriteLine(ImportProducts(context, productsXml));
+            //Console.WriteLine(ImportCategories(context, categoryXml));
+            Console.WriteLine(ImportCategoryProducts(context, categoryProductsXml));
         }
 
         public static string ImportUsers(ProductShopContext context, string inputXml)
         {
             int count = 0;
-            using (var reder = new StringReader(inputXml))
+            using (var reader = new StringReader(inputXml))
             {
                 var serializer = new XmlSerializer(typeof(ImportUserDto[]), new XmlRootAttribute("Users"));
 
-                var users = (ImportUserDto[])serializer.Deserialize(reder);
+                var users = (ImportUserDto[])serializer.Deserialize(reader);
 
                 var mappedUsers = users
                     .Select(u => new User
@@ -104,27 +114,25 @@ namespace ProductShop
             int count = 0;
             using (var reader = new StringReader(inputXml))
             {
-                var serializer = new XmlSerializer(typeof(ImportUserDto[]), new XmlRootAttribute("Users"));
+                var serializer = new XmlSerializer(
+                typeof(ImportCategoryProductDto[]),
+                new XmlRootAttribute("CategoryProducts"));
+                var categoryProductDtos = (ImportCategoryProductDto[])serializer.Deserialize(reader);
 
-                var users = (ImportUserDto[])serializer.Deserialize(reader);
-
-                var mappedUsers = users
-                    .Select(u => new User
+                var cateogryProducts = categoryProductDtos
+                    .Select(d => new CategoryProduct
                     {
-                        FirstName = u.FirstName,
-                        LastName = u.LastName,
-                        Age = u.Age
+                        CategoryId = d.CategoryId,
+                        ProductId = d.ProductId
                     })
                     .ToList();
 
-                context.Users.AddRange(mappedUsers);
+
+                context.CategoryProducts.AddRange(cateogryProducts);
                 context.SaveChanges();
 
-                count = mappedUsers.Count();
+                count = cateogryProducts.Count();
             }
-
-            return $"Successfully imported {count}";
-        }
 
             return $"Successfully imported {count}";
         }
