@@ -166,7 +166,6 @@ namespace ProductShop
 
             return sb.ToString().TrimEnd();
         }
-
         public static string GetSoldProducts(ProductShopContext context)
         {
             var users = context.Users
@@ -229,6 +228,51 @@ namespace ProductShop
                     typeof(ExportCategoryByProductDto[]),
                     new XmlRootAttribute("Categories"));
                 serializer.Serialize(writer, categoryDtos, ns);
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+        public static string GetUsersWithProducts(ProductShopContext context)
+        {
+            var users = context.Users
+                .Where(u => u.ProductsSold.Any())
+                .OrderByDescending(p => p.ProductsSold.Count())
+                .Select(u => new UserWithProductsDto
+                {
+                    FirstName = u.FirstName,
+                    LastName = u.LastName,
+                    Age = u.Age,
+                    SoldProducts = new SoldProductDto
+                    {
+                        Count = u.ProductsSold.Count(),
+                        Products = u.ProductsSold
+                            .Select(p => new ProductDto
+                            {
+                                Name = p.Name,
+                                Price = p.Price
+                            })
+                            .OrderByDescending(p => p.Price)
+                            .ToArray()
+                    }
+                })
+                .Take(10)
+                .ToArray();
+
+            var userAndProducts = new UserAndProductsDto
+            {
+                Count = context.Users.Count(u => u.ProductsSold.Any()),
+                Users = users
+            };
+
+            var sb = new StringBuilder();
+
+            using (var writer = new StringWriter(sb))
+            {
+                var ns = new XmlSerializerNamespaces();
+                ns.Add(string.Empty, string.Empty);
+
+                var serializer = new XmlSerializer(typeof(UserAndProductsDto), new XmlRootAttribute("Users"));
+                serializer.Serialize(writer, userAndProducts, ns);
             }
 
             return sb.ToString().TrimEnd();
