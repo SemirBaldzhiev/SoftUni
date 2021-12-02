@@ -202,6 +202,37 @@ namespace ProductShop
 
             return sb.ToString().TrimEnd();
         }
+        public static string GetCategoriesByProductsCount(ProductShopContext context)
+        {
+            var categoryDtos = context.Categories
+                .Select(c => new ExportCategoryByProductDto
+                {
+                    Name = c.Name,
+                    Count = c.CategoryProducts.Count,
+                    AveragePrice = c.CategoryProducts
+                        .Average(p => p.Product.Price),
+                    TotalRevenue = c.CategoryProducts
+                        .Sum(p => p.Product.Price)
+                })
+                .OrderByDescending(c => c.Count)
+                .ThenBy(c => c.TotalRevenue)
+                .ToArray();
+
+            var sb = new StringBuilder();
+
+            using (var writer = new StringWriter(sb))
+            {
+                var ns = new XmlSerializerNamespaces();
+                ns.Add(string.Empty, string.Empty);
+
+                var serializer = new XmlSerializer(
+                    typeof(ExportCategoryByProductDto[]),
+                    new XmlRootAttribute("Categories"));
+                serializer.Serialize(writer, categoryDtos, ns);
+            }
+
+            return sb.ToString().TrimEnd();
+        }
 
     }
 }
