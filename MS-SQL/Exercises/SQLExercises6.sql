@@ -1,0 +1,8 @@
+CREATE DATABASE SelfReferencing 
+
+CREATE TABLE Teachers
+(
+	TeacherID INT PRIMARY KEY NOT NULL,
+	[Name] VARCHAR(50) NOT NULL,
+	ManagerID INT FOREIGN KEY REFERENCES Teachers(TeacherID)
+)
