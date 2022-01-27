@@ -4,6 +4,7 @@ using BasicWebServer.Server.Responses;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Web;
 
 namespace BsicWebServer
 {
@@ -32,8 +33,48 @@ namespace BsicWebServer
                 .MapPost("/HTML", new TextResponse(Startup.HtmlForm))
                 .MapPost("/HTML", new TextResponse("", Startup.AddFormDataAction))
                 .MapGet("/Content", new HtmlResponse(Startup.DownloadForm))
-                .MapPost("/Content", new TextFileResponse(Startup.FileName)));
+                .MapPost("/Content", new TextFileResponse(Startup.FileName))
+                .MapGet("/Cookies", new HtmlResponse("", Startup.AddCookiesAction)));
+            
             await server.Start();
+        }
+
+        private static void AddCookiesAction(Request request, Response response)
+        {
+            var requestHasCookie = request.Cookies.Any();
+            var bodyText = "";
+
+            if (requestHasCookie)
+            {
+                var cookieText = new StringBuilder();
+
+                cookieText.AppendLine("<h1>Cookies</h1>");
+
+                cookieText.Append("<table> border='1'><tr><th>Name</th><th>Value</th></tr>");
+
+                foreach (var cookie in request.Cookies)
+                {
+                    cookieText.Append("<tr>");
+                    cookieText.Append($"<td>{HttpUtility.HtmlEncode(cookie.Name)}</td>");
+                    cookieText.Append($"<td>{HttpUtility.HtmlEncode(cookie.Value)}</td>");
+                    cookieText.Append("</tr>");
+                }
+
+                cookieText.Append("</table>");
+
+                bodyText = cookieText.ToString();
+            }
+            else
+            {
+                bodyText = "<h1>Cookie set!</h1>";
+            }
+
+            if (!requestHasCookie)
+            {
+                response.Cookies.Add("My-Cookie", "My-Value");
+                response.Cookies.Add("My-Second-Cookie", "My-Second-Value");
+
+            }
         }
 
         private static void AddFormDataAction(Request request, Response response)

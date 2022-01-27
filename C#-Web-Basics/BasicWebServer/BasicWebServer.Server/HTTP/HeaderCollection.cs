@@ -27,8 +27,7 @@ namespace BasicWebServer.Server.HTTP
 
         public void Add(string name, string value)
         {
-            var header = new Header(name, value);
-            headers.Add(name, header);
+            headers[name] = new Header(name, value);
         }
 
         public IEnumerator<Header> GetEnumerator()

@@ -9,12 +9,19 @@ namespace BasicWebServer.Server.HTTP
 {
     public class Request
     {
+        private static Dictionary<string, Session> Sessions = new Dictionary<string, Session>();
+
         public Method Method { get; private set; }
         public string Url { get; private set; }
         public HeaderCollection Headers { get; private set; }
+
+        public CookieCollection Cookies { get; private set; }
         public string Body { get; private set; }
 
-        public IReadOnlyDictionary<string, string> Form { get; private set};
+        public Session Session { get; private set; }
+        public IReadOnlyDictionary<string, string> Form { get; private set; }
+
+
 
         public static Request Parse(string request)
         {
@@ -25,6 +32,8 @@ namespace BasicWebServer.Server.HTTP
             var method = ParseMethod(startLine[0]);
             var url = startLine[1];
             var headers = ParseHeaders(lines.Skip(1));
+            var cookies = ParseCookies(headers);
+            var session = GetSession(cookies);
             var bodyLines = lines.Skip(headers.Count + 2).ToArray();
 
             var  body = string.Join("\r\n", bodyLines);
@@ -35,9 +44,49 @@ namespace BasicWebServer.Server.HTTP
                 Method = method,
                 Url = url,
                 Headers = headers,
+                Cookies = cookies,
                 Body = body,
+                Session = session,
                 Form = form
             };
+        }
+
+        private static Session GetSession(CookieCollection cookies)
+        {
+            var sessionId = cookies.Contains(Session.SessionCookieName)
+                ? cookies[Session.SessionCookieName]
+                : Guid.NewGuid().ToString();
+
+            if (!Sessions.ContainsKey(sessionId))
+            {
+                Sessions[sessionId] = new Session(sessionId);
+            }
+
+            return Sessions[sessionId];
+        }
+
+        private static CookieCollection ParseCookies(HeaderCollection headers)
+        {
+            var cookiesCollection = new CookieCollection();
+
+            if (headers.Contains(Header.Cookie))
+            {
+                var cookieHeader = headers[Header.Cookie];
+
+                var allCookies = cookieHeader.Split(';');
+
+                foreach (var cookieText in allCookies)
+                {
+                    var cookieParts = cookieText.Split('=');
+
+                    var cookieName = cookieParts[0].Trim();
+                    var cookieValue = cookieParts[1].Trim();
+
+                    cookiesCollection.Add(cookieName, cookieValue);
+                }
+            }
+
+            return cookiesCollection;
         }
 
         private static Dictionary<string, string> ParseForm(HeaderCollection headers, string body)
@@ -63,7 +112,7 @@ namespace BasicWebServer.Server.HTTP
             .Split('&')
             .Select(part => part.Split('='))
             .Where(part => part.Length == 2)
-            .ToDictionary(part => part[0], part => part[1], StringComparer.InvariantCultureIgnoreCase)
+            .ToDictionary(part => part[0], part => part[1], StringComparer.InvariantCultureIgnoreCase);
 
         private static HeaderCollection ParseHeaders(IEnumerable<string> headerLines)
         {
