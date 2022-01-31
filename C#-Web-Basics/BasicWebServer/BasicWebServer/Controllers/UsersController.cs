@@ -6,16 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BasicWebServer.Controllers
+namespace BasicWebServer.Demo.Controllers
 {
     public class UsersController : Controller
     {
-        private const string LoginForm = @"<form action='/Login' method='POST'>
-               Username: <input type='text' name='Username'/>
-               Password: <input type='text' name='Password'/>
-               <input type='submit' value ='Log In' /> 
-            </form>";
-
         private const string Username = "user";
         private const string Password = "user123";
 
@@ -25,7 +19,7 @@ namespace BasicWebServer.Controllers
         {
         }
 
-        public Response Login() => View();;
+        public Response Login() => View();
 
         public Response LogInUser()
         {

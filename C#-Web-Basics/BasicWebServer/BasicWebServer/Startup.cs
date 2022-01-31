@@ -1,14 +1,8 @@
-﻿using BasicWebServer.Controllers;
+﻿using BasicWebServer.Demo.Controllers;
 using BasicWebServer.Server;
 using BasicWebServer.Server.Controllers;
-using BasicWebServer.Server.HTTP;
-using BasicWebServer.Server.Responses;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Web;
 
-namespace BsicWebServer
+namespace BsicWebServer.Demo
 {
     public class Startup
     {

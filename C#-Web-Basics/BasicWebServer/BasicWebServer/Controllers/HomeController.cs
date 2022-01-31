@@ -1,10 +1,10 @@
-﻿using BasicWebServer.Models;
+﻿using BasicWebServer.Demo.Models;
 using BasicWebServer.Server.Controllers;
 using BasicWebServer.Server.HTTP;
 using System.Text;
 using System.Web;
 
-namespace BasicWebServer.Controllers
+namespace BasicWebServer.Demo.Controllers
 {
     public class HomeController : Controller
     {
