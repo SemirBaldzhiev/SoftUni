@@ -25,7 +25,7 @@ namespace BasicWebServer.Controllers
         {
         }
 
-        public Response Login() => Html(UsersController.LoginForm);
+        public Response Login() => View();;
 
         public Response LogInUser()
         {
