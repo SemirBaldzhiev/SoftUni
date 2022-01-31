@@ -3,7 +3,7 @@ using BasicWebServer.Server.Responses;
 
 namespace BasicWebServer.Server.Controllers
 {
-    public class Controller
+    public abstract class Controller
     {
         protected Controller(Request request)
         {
@@ -16,7 +16,22 @@ namespace BasicWebServer.Server.Controllers
         protected Response BadRequest() => new BadRequestResponse();
         protected Response Unauthorized() => new UnauthorizedResponse();
         protected Response NotFound() => new NotFoundResponse();
-        protected Response Rediredt(string location) => new RedirectResponse(location);
+        protected Response Redirect(string location) => new RedirectResponse(location);
         protected Response File(string fileName) => new TextFileResponse(fileName);
+
+        protected Response Html(string html, CookieCollection cookies = null)
+        {
+            var response = new HtmlResponse(html);
+
+            if (cookies != null)
+            {
+                foreach (var cookie in cookies)
+                {
+                    response.Cookies.Add(cookie.Name, cookie.Value);
+                }
+            }
+
+            return response;
+        }
     }
 }
