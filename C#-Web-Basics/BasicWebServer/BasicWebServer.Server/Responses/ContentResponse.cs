@@ -10,14 +10,12 @@ namespace BasicWebServer.Server.Responses
 {
     public class ContentResponse : Response
     {
-        public ContentResponse(string content, string contentType,
-            Action<Request, Response> preRenderAction = null) 
+        public ContentResponse(string content, string contentType) 
             : base(StatusCode.OK)
         {
             Guard.AgainstNull(content, nameof(content));
             Guard.AgainstNull(contentType, nameof(contentType));
 
-            PreRenderAction = preRenderAction;
             Headers.Add(Header.ContentType, contentType);
 
             Body = content;
