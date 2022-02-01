@@ -1,6 +1,7 @@
 ﻿namespace SharedTrip.Data
 {
     using Microsoft.EntityFrameworkCore;
+    using SharedTrip.Models;
 
     public class ApplicationDbContext : DbContext
     {
@@ -19,6 +20,11 @@
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<UserTrip>(e =>
+            {
+                e.HasKey(ut => new { ut.UserId, ut.TripId });
+            });
         }
     }
 }
