@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+using static SharedTrip.Constants.DataConstants;
+
 namespace SharedTrip.Models
 {
     public class Trip
@@ -9,6 +11,7 @@ namespace SharedTrip.Models
         public Trip()
         {
             UserTrips = new HashSet<UserTrip>();
+            Id = Guid.NewGuid().ToString();
         }
 
         [Key]
@@ -27,7 +30,7 @@ namespace SharedTrip.Models
         public int Seats { get; set; }
 
         [Required]
-        [MaxLength(80)]
+        [MaxLength(DescriptionMaxLength)]
         public string  Description { get; set; }
 
         public string ImagePath { get; set; }

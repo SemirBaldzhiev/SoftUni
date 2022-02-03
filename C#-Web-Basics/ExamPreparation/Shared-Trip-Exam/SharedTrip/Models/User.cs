@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using static SharedTrip.Constants.DataConstants;
 
 namespace SharedTrip.Models
 {
@@ -8,19 +10,19 @@ namespace SharedTrip.Models
         public User()
         {
             UserTrips = new HashSet<UserTrip>();
+            Id = Guid.NewGuid().ToString();
         }
 
         [Key]
         public string Id { get; set; }
 
         [Required]
-        [MaxLength(20)]
+        [MaxLength(DefaultMaxLength)]
         public string Username { get; set; }
         [Required]
         public string Email { get; set; }
 
         [Required]
-        [MaxLength(20)]
         public string Password { get; set; }
 
         public ICollection<UserTrip> UserTrips { get; set; }
