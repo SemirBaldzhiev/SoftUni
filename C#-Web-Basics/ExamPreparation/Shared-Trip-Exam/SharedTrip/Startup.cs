@@ -5,8 +5,10 @@
     using MyWebServer;
     using MyWebServer.Controllers;
 
-    using Controllers;
     using MyWebServer.Results.Views;
+    using SharedTrip.Data;
+    using Microsoft.EntityFrameworkCore;
+    using SharedTrip.Services;
 
     public class Startup
     {
@@ -16,7 +18,12 @@
                     .MapStaticFiles()
                     .MapControllers())
                 .WithServices(services => services
+                    .Add<ApplicationDbContext>()
+                    .Add<IValidator, Validator>()
+                    .Add<IPasswordHasher, PasswordHasher>()
                     .Add<IViewEngine, CompilationViewEngine>())
+                .WithConfiguration<ApplicationDbContext>(context => context
+                    .Database.Migrate())
                 .Start();
     }
 }
