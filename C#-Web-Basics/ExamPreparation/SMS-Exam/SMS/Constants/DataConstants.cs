@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SMS.Constants
 {
-    internal class DataConstants
+    public class DataConstants
     {
+        public const int DefaultMaxLength = 20;
     }
 }
