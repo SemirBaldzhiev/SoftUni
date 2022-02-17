@@ -15,7 +15,5 @@ namespace SMS.Controllers
             this.validator = validator;
             this.data = data;
         }
-
-        }
     }
 }
