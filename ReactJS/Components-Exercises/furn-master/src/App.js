@@ -1,3 +1,5 @@
+import Footer from './components/Footer.js'
+
 
 function App() {
 	return (
@@ -695,7 +697,7 @@ function App() {
 		
 
 		
-		<section id="clients"  className="clients">
+		<section id="clients" className="clients">
 			<div className="container">
 				<div className="owl-carousel owl-theme" id="client">
 						<div className="item">
@@ -809,42 +811,9 @@ function App() {
 
 		</section>
 		
-
+		<Footer/>
 		
-		<footer id="footer"  className="footer">
-			<div className="container">
-				<div className="hm-footer-copyright text-center">
-					<div className="footer-social">
-						<a href="https://www.facebook.com/"><i className="fa fa-facebook"></i></a>	
-						<a href="https://www.instagram.com/"><i className="fa fa-instagram"></i></a>
-						<a href="https://www.linkedin.com/"><i className="fa fa-linkedin"></i></a>
-						<a href="https://www.pinterest.com/"><i className="fa fa-pinterest"></i></a>
-						<a href="https://www.behance.net/"><i className="fa fa-behance"></i></a>	
-					</div>
-					<p>
-						&copy;copyright. designed and developed by <a href="https://www.themesine.com/">themesine</a>
-					</p>
-				</div>
-			</div>
-
-			<div id="scroll-Top">
-				<div className="return-to-top">
-					<i className="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
-				</div>
-				
-			</div>
 			
-				</footer>
-		
-		
-		<script src="assets/js/jquery.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/bootsnav.js"></script>
-		<script src="assets/js/owl.carousel.min.js"></script>
-		<script src="htbps://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-		<script src="assets/js/custom.js"></script>
-				
 		</div>
 	);
 }
