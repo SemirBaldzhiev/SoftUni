@@ -1,0 +1,5 @@
+cnt_pages = int(input())
+pages_for_h = int(input())
+cnt_days = int(input())
+h_per_day = int(cnt_pages / pages_for_h / cnt_days)
+print(h_per_day)
